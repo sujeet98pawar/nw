@@ -52,12 +52,12 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
           <ArrowLeft size={22} strokeWidth={2.5} />
         </button>
         
-        <h1 className="absolute inset-0 flex items-center justify-center text-[18px] font-bold tracking-widest pointer-events-none uppercase">
+        <h1 className="absolute inset-0 flex items-center justify-center text-[21px] font-bold tracking-normal pointer-events-none uppercase">
           BOOK SEAT
         </h1>
 
         <button className="p-1 z-20">
-          <MoreVertical size={22} />
+          <MoreVertical size={40} />
         </button>
       </header>
 
