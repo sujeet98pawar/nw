@@ -1,6 +1,6 @@
 
 export const COLORS = {
-  primary: '#9C27B0', // Deep Purple as per description
+  primary: 'rgb(110,40,175)', // Deep Purple as per description
   background: '#f5f5f5',
   badgeText: '#D32F2F', // Standard Red
   badgeBorder: '#EF9A9A', // Lighter red for border
