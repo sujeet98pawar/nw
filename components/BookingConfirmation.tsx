@@ -45,7 +45,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
   };
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden bg-[#f5f5f5] relative font-sans">
+    <div className="flex flex-col h-screen overflow-hidden bg-['rgb(110,30,150)'] relative font-Robeto">
       {/* App Bar / Header */}
       <header className="relative flex items-center justify-between px-4 h-14 text-white shadow-md z-10 bg-custom-purple">
         <button onClick={onBack} className="p-1 active:opacity-60 transition-opacity z-20">
