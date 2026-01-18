@@ -1,8 +1,8 @@
 
 export const COLORS = {
-  primary: 'rgb(106,27,154)', // Brand purple from user image
+  primary: 'rgb(123,31,162)', // Brand purple from user image
   background: '#f5f5f5',
-  badgeText: '#D32F2F', // Standard Red
+  badgeText: '#C62828', // Standard Red
   badgeBorder: '#EF9A9A', // Lighter red for border
   linkText: '#9C27B0', // Matching brand purple
   bannerBg: '#E8EAF6'  // Light Lavender tint

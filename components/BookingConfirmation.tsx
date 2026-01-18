@@ -96,7 +96,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
             <div className="flex items-center gap-3">
               {/* BOOKED Badge - Fixed centering */}
               <div 
-                className="flex items-center justify-center px-3 h-[24px] rounded-full text-[11px] font-bold border tracking-wider whitespace-nowrap"
+                className="flex items-center justify-center px-5 h-[30px] rounded-full text-[14px] font-bold border tracking-wider whitespace-nowrap"
                 style={{ 
                   color: COLORS.badgeText, 
                   borderColor: COLORS.badgeBorder,
