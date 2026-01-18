@@ -28,8 +28,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialData, onSubmit }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const seat = parseInt(formData.seatNumber);
-    if (seat < 100 || seat > 500) {
-      alert("Seat number must be between 100 and 500");
+    if (isNaN(seat) || seat < 1) {
+      alert("Please enter a valid seat number");
       return;
     }
     onSubmit(formData);
@@ -38,16 +38,17 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialData, onSubmit }) => {
   return (
     <div className="flex flex-col h-screen bg-white">
       {/* Header synchronized with Confirmation Page */}
-      <header 
-        className="flex items-center justify-center h-14 text-white shadow-md z-10 shrink-0"
-        style={{ backgroundColor: COLORS.primary }}
-      >
+      <header className="flex items-center justify-center h-14 text-white shadow-md z-10 shrink-0 bg-custom-purple">
         <h1 className="text-lg font-bold tracking-widest uppercase">
-          New Booking
+          BOOK SEAT
         </h1>
       </header>
 
       <form onSubmit={handleSubmit} className="p-6 space-y-6 flex-1 overflow-y-auto">
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 mb-2">
+           <p className="text-blue-800 text-sm">Fill in the details below to reserve your workstation.</p>
+        </div>
+
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Select Date</label>
           <input
@@ -61,15 +62,13 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialData, onSubmit }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Seat Number (100 - 500)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">Seat Number</label>
           <input
             type="number"
             name="seatNumber"
-            min="100"
-            max="500"
             value={formData.seatNumber}
             onChange={handleChange}
-            placeholder="e.g. 103"
+            placeholder="e.g. 10"
             required
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
           />
@@ -91,8 +90,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialData, onSubmit }) => {
         <div className="pt-4">
           <button
             type="submit"
-            className="w-full py-4 text-white font-bold rounded-lg shadow-lg active:scale-95 transition-transform"
-            style={{ backgroundColor: COLORS.primary }}
+            className="w-full py-4 text-white font-bold rounded-lg shadow-lg active:scale-95 transition-transform bg-custom-purple"
           >
             BOOK SEAT
           </button>

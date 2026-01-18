@@ -46,16 +46,13 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
 
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-[#f5f5f5] relative font-sans">
-      {/* App Bar / Header - Title Centered */}
-      <header 
-        className="relative flex items-center justify-between px-4 h-14 text-white shadow-md z-10"
-        style={{ backgroundColor: COLORS.primary }}
-      >
+      {/* App Bar / Header */}
+      <header className="relative flex items-center justify-between px-4 h-14 text-white shadow-md z-10 bg-custom-purple">
         <button onClick={onBack} className="p-1 active:opacity-60 transition-opacity z-20">
           <ArrowLeft size={22} strokeWidth={2.5} />
         </button>
         
-        <h1 className="absolute inset-0 flex items-center justify-center text-lg font-bold tracking-widest pointer-events-none">
+        <h1 className="absolute inset-0 flex items-center justify-center text-[18px] font-bold tracking-widest pointer-events-none uppercase">
           BOOK SEAT
         </h1>
 
@@ -67,7 +64,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
       {/* Main Content Area */}
       <main className="flex-1 p-4 flex flex-col items-center">
         
-        {/* Banner Alert - Bold first line, split content */}
+        {/* Banner Alert */}
         <div className="w-full rounded-lg p-4 mb-4 shadow-sm" style={{ backgroundColor: COLORS.bannerBg }}>
           <p className="text-gray-800 text-[14px] leading-snug font-normal">
             <span className="font-bold">Time Slot based seat booking is now live!</span>
@@ -97,8 +94,9 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
             </span>
             
             <div className="flex items-center gap-3">
+              {/* BOOKED Badge - Fixed centering */}
               <div 
-                className="px-4 py-1 rounded-full text-[11px] font-bold border tracking-wider"
+                className="flex items-center justify-center px-3 h-[24px] rounded-full text-[11px] font-bold border tracking-wider whitespace-nowrap"
                 style={{ 
                   color: COLORS.badgeText, 
                   borderColor: COLORS.badgeBorder,
@@ -125,7 +123,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
             </p>
           </div>
 
-          {/* Carousel Indicator Dots - Only two dots */}
+          {/* Carousel Indicator Dots */}
           <div className="flex justify-center gap-1.5 mt-2">
             <div 
               className={`w-1.5 h-1.5 rounded-full transition-colors duration-300`} 
@@ -139,7 +137,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
         </div>
       </main>
 
-      {/* Spacing filler instead of navigation bar */}
+      {/* Spacing filler */}
       <div className="pb-8 bg-transparent"></div>
     </div>
   );
