@@ -48,7 +48,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
     return (
       <div className="w-full shrink-0 px-4 py-3.5 select-none">
         <div className="mb-1.5">
-          <h2 className="text-[16px] font-medium text-black-800">Recent Booking</h2>
+          <h2 className="text-[16px] font-medium text-black-1000">Recent Booking</h2>
         </div>
 
         <div className="flex items-center justify-between mb-4 min-h-[32px]">
@@ -95,7 +95,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
           <ArrowLeft size={24} strokeWidth={2.5} />
         </button>
         
-        <h1 className="absolute inset-0 flex items-center justify-center text-[22px] font-bold tracking-[0.04em] pointer-events-none uppercase">
+        <h1 className="absolute inset-0 flex items-center justify-center text-[21px] font-bold tracking-[0.04em] pointer-events-none uppercase">
           BOOK SEAT
         </h1>
 

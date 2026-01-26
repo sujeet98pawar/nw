@@ -2,7 +2,7 @@ export const COLORS = {
   primary: '#7f00cc', 
   background: '#f5f5f5',
   badgeText: '#C62828', 
-  badgeBorder: '#EF9A9A', 
+  badgeBorder: '#C62828', 
   linkText: '#7f00cc', 
   bannerBg: '#dfedfe'  
 };
