@@ -52,7 +52,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
         </div>
 
         <div className="flex items-center justify-between mb-4 min-h-[32px]">
-          <span className="text-[12px] text-gray-500 font-medium">
+          <span className="text-[13px] text-gray-500 font-medium">
             {formatDate(booking.date, dateOffset)}
           </span>
           
@@ -74,13 +74,13 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
         </div>
 
         <div className="space-y-0.5 mb-4">
-          <p className="text-[15px] font-bold text-black-900">
+          <p className="text-[16px] font-bold text-black-900">
             Cubicle: MUM02 01 {slotCode} A {booking.seatNumber}
           </p>
-          <p className="text-[13px] text-black-500 font-roboto">
+          <p className="text-[14px] text-black-600 font-roboto">
             Mumbai, ILMUMBAISTP, SDB01, {booking.slot},
           </p>
-          <p className="text-[13px] text-black-500 font-roboto">
+          <p className="text-[14px] text-black-600 font-roboto">
             {booking.timeRange} Floor, A Wing
           </p>
         </div>
