@@ -46,8 +46,8 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
 
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-[#f5f5f5] relative font-sans">
-      {/* App Bar / Header - Matches snippet precisely */}
-      <header className="relative flex items-center justify-between px-4 h-14 text-white shadow-md z-10 bg-custom-purple">
+      {/* App Bar / Header - Matches snippet precisely with new blue theme */}
+      <header className="relative flex items-center justify-between px-4 h-14 text-white shadow-md z-10 bg-brand-color">
         <button onClick={onBack} className="p-1 active:opacity-60 transition-opacity z-20">
           <ArrowLeft size={24} strokeWidth={2.5} />
         </button>
