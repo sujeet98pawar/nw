@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { BookingData, SlotType } from '../types';
 import { SLOT_CONFIG, COLORS } from '../constants';
@@ -37,7 +36,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialData, onSubmit }) => {
 
   return (
     <div className="flex flex-col h-screen bg-white">
-      {/* Header synchronized with Confirmation Page */}
+      {/* Header with stable blue background */}
       <header className="flex items-center justify-center h-14 text-white shadow-md z-10 shrink-0 bg-custom-purple">
         <h1 className="text-lg font-bold tracking-widest uppercase">
           BOOK SEAT
@@ -57,7 +56,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialData, onSubmit }) => {
             value={formData.date}
             onChange={handleChange}
             required
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
           />
         </div>
 
@@ -68,9 +67,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialData, onSubmit }) => {
             name="seatNumber"
             value={formData.seatNumber}
             onChange={handleChange}
-            placeholder="e.g. 10"
+            placeholder="e.g. 103"
             required
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
           />
         </div>
 
@@ -80,7 +79,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialData, onSubmit }) => {
             name="slot"
             value={formData.slot}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none bg-white"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
           >
             <option value={SlotType.SLOT_1}>Slot 1 (8 AM - 1 PM)</option>
             <option value={SlotType.SLOT_2}>Slot 2 (2 PM - 7 PM)</option>

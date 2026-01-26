@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { BookingData } from '../types';
 import { COLORS } from '../constants';
@@ -10,14 +9,12 @@ interface BookingConfirmationProps {
 }
 
 const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBack }) => {
-  const [currentSlide, setCurrentSlide] = useState(0); // 0 = Selected Date, 1 = Next Day
+  const [currentSlide, setCurrentSlide] = useState(0); 
   const touchStart = useRef<number | null>(null);
 
-  // Format date to DD-MMM-YYYY (e.g. 17-Jan-2026)
   const formatDate = (dateStr: string, offset: number = 0) => {
     const date = new Date(dateStr);
     date.setDate(date.getDate() + offset);
-    
     const day = date.getDate().toString().padStart(2, '0');
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const month = months[date.getMonth()];
@@ -35,52 +32,43 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
     const diff = touchStart.current - touchEnd;
 
     if (diff > 50) {
-      // Swipe Left -> Next Slide
       setCurrentSlide(1);
     } else if (diff < -50) {
-      // Swipe Right -> Prev Slide
       setCurrentSlide(0);
     }
     touchStart.current = null;
   };
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden bg-['rgb(110,190,150)'] relative font-Robeto">
-      {/* App Bar / Header */}
+    <div className="flex flex-col h-screen overflow-hidden bg-[#f5f5f5] relative font-sans">
+      {/* App Bar / Header using the stable brand color */}
       <header className="relative flex items-center justify-between px-4 h-14 text-white shadow-md z-10 bg-custom-purple">
         <button onClick={onBack} className="p-1 active:opacity-60 transition-opacity z-20">
-          <ArrowLeft size={22} strokeWidth={2.5} />
+          <ArrowLeft size={24} strokeWidth={2.5} />
         </button>
         
-        <h1 className="absolute inset-0 flex items-center justify-center text-[21px] font-bold tracking-normal pointer-events-none uppercase">
+        <h1 className="absolute inset-0 flex items-center justify-center text-[18px] font-bold tracking-tight pointer-events-none uppercase">
           BOOK SEAT
         </h1>
 
         <button className="p-1 z-20">
-          <MoreVertical size={40} />
+          <MoreVertical size={24} />
         </button>
       </header>
 
-      {/* Main Content Area */}
       <main className="flex-1 p-4 flex flex-col items-center">
-        
-        {/* Banner Alert */}
         <div className="w-full rounded-lg p-4 mb-4 shadow-sm" style={{ backgroundColor: COLORS.bannerBg }}>
           <p className="text-gray-800 text-[14px] leading-snug font-normal">
             <span className="font-bold">Time Slot based seat booking is now live!</span>
             <br />
-            <span 
-              className="font-medium underline decoration-1"
-              style={{ color: COLORS.linkText }}
-            >
+            <span className="font-medium underline decoration-1" style={{ color: COLORS.linkText }}>
               Click Here
             </span> to choose cities/DCs where time slot-based seat booking is enabled.
           </p>
         </div>
 
-        {/* Recent Booking Card - Swipeable */}
         <div 
-          className="w-full bg-white rounded-md border border-gray-200 shadow-sm p-5 relative select-none transition-all duration-300"
+          className="w-full bg-white rounded-md border border-gray-200 shadow-sm p-5 relative select-none"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -94,9 +82,9 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
             </span>
             
             <div className="flex items-center gap-3">
-              {/* BOOKED Badge - Fixed centering */}
+              {/* BOOKED Badge - Precisely centered */}
               <div 
-                className="flex items-center justify-center px-5 h-[30px] rounded-full text-[14px] font-bold border tracking-wider whitespace-nowrap"
+                className="flex items-center justify-center px-4 h-[26px] rounded-full text-[12px] font-bold border tracking-wider whitespace-nowrap leading-none"
                 style={{ 
                   color: COLORS.badgeText, 
                   borderColor: COLORS.badgeBorder,
@@ -123,21 +111,12 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
             </p>
           </div>
 
-          {/* Carousel Indicator Dots */}
           <div className="flex justify-center gap-1.5 mt-2">
-            <div 
-              className={`w-1.5 h-1.5 rounded-full transition-colors duration-300`} 
-              style={{ backgroundColor: currentSlide === 0 ? COLORS.primary : '#D1D5DB' }}
-            ></div>
-            <div 
-              className={`w-1.5 h-1.5 rounded-full transition-colors duration-300`} 
-              style={{ backgroundColor: currentSlide === 1 ? COLORS.primary : '#D1D5DB' }}
-            ></div>
+            <div className="w-1.5 h-1.5 rounded-full transition-colors duration-300" style={{ backgroundColor: currentSlide === 0 ? COLORS.primary : '#D1D5DB' }}></div>
+            <div className="w-1.5 h-1.5 rounded-full transition-colors duration-300" style={{ backgroundColor: currentSlide === 1 ? COLORS.primary : '#D1D5DB' }}></div>
           </div>
         </div>
       </main>
-
-      {/* Spacing filler */}
       <div className="pb-8 bg-transparent"></div>
     </div>
   );
