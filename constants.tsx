@@ -1,10 +1,10 @@
 export const COLORS = {
-  primary: '#800080', // Stable Material Light Blue
+  primary: '#03a9f4', 
   background: '#f5f5f5',
-  badgeText: '#C62828', // Standard Red
-  badgeBorder: '#EF9A9A', // Lighter red for border
-  linkText: '#800080', // Matching brand blue
-  bannerBg: '#E8EAF6'  // Light Lavender tint
+  badgeText: '#C62828', 
+  badgeBorder: '#EF9A9A', 
+  linkText: '#03a9f4', 
+  bannerBg: '#E8EAF6'  
 };
 
 export const SLOT_CONFIG = {

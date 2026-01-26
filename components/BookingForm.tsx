@@ -36,8 +36,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialData, onSubmit }) => {
 
   return (
     <div className="flex flex-col h-screen bg-white">
-      {/* Header with stable blue background */}
-      <header className="flex items-center justify-center h-14 text-white shadow-md z-10 shrink-0 bg-custom-purple">
+      <header className="flex items-center justify-center h-14 text-white shadow-md z-10 shrink-0 bg-brand-color">
         <h1 className="text-lg font-bold tracking-widest uppercase">
           BOOK SEAT
         </h1>
@@ -89,7 +88,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialData, onSubmit }) => {
         <div className="pt-4">
           <button
             type="submit"
-            className="w-full py-4 text-white font-bold rounded-lg shadow-lg active:scale-95 transition-transform bg-custom-purple"
+            className="w-full py-4 text-white font-bold rounded-lg shadow-lg active:scale-95 transition-transform bg-brand-color"
           >
             BOOK SEAT
           </button>
