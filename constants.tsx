@@ -4,7 +4,7 @@ export const COLORS = {
   badgeText: '#C62828', 
   badgeBorder: '#EF9A9A', 
   linkText: '#7f00cc', 
-  bannerBg: '#d8e9fe'  
+  bannerBg: '#dfedfe'  
 };
 
 export const SLOT_CONFIG = {
