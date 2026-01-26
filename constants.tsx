@@ -1,10 +1,10 @@
 export const COLORS = {
-  primary: '#03a9f4', 
+  primary: '#7f00cc', 
   background: '#f5f5f5',
   badgeText: '#C62828', 
   badgeBorder: '#EF9A9A', 
-  linkText: '#03a9f4', 
-  bannerBg: '#E8EAF6'  
+  linkText: '#7f00cc', 
+  bannerBg: '#c3c9e8'  
 };
 
 export const SLOT_CONFIG = {

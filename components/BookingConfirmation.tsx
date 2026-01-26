@@ -1,6 +1,6 @@
 
 import React, { useState, useRef } from 'react';
-import { BookingData } from '../types';
+import { BookingData, SlotType } from '../types';
 import { COLORS } from '../constants';
 import { ArrowLeft, MoreVertical } from 'lucide-react';
 
@@ -41,50 +41,55 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
     touchStart.current = null;
   };
 
-  const CardContent = ({ dateOffset }: { dateOffset: number }) => (
-    <div className="w-full shrink-0 p-5 select-none">
-      <div className="mb-2">
-        <h2 className="text-[16px] font-medium text-gray-800">Recent Booking</h2>
-      </div>
+  const CardContent = ({ dateOffset }: { dateOffset: number }) => {
+    // Dynamically set cubicle code: Slot 1 (8AM-1PM) -> 04, Slot 2 (2PM-7PM) -> 05
+    const slotCode = booking.slot === SlotType.SLOT_1 ? '04' : '05';
+    
+    return (
+      <div className="w-full shrink-0 px-4 py-3.5 select-none">
+        <div className="mb-1.5">
+          <h2 className="text-[16px] font-medium text-gray-800">Recent Booking</h2>
+        </div>
 
-      <div className="flex items-center justify-between mb-6 min-h-[32px]">
-        <span className="text-[12px] text-gray-500 font-medium">
-          {formatDate(booking.date, dateOffset)}
-        </span>
-        
-        <div className="flex items-center gap-3">
-          <div 
-            className="flex items-center justify-center px-3 h-[22px] rounded-full text-[10px] font-bold border tracking-wider whitespace-nowrap leading-none"
-            style={{ 
-              color: COLORS.badgeText, 
-              borderColor: COLORS.badgeBorder,
-              backgroundColor: 'transparent'
-            }}
-          >
-            BOOKED
+        <div className="flex items-center justify-between mb-4 min-h-[32px]">
+          <span className="text-[12px] text-gray-500 font-medium">
+            {formatDate(booking.date, dateOffset)}
+          </span>
+          
+          <div className="flex items-center gap-3">
+            <div 
+              className="flex items-center justify-center px-5 h-[24px] rounded-full text-[11.5px] font-bold border tracking-wider whitespace-nowrap leading-none"
+              style={{ 
+                color: COLORS.badgeText, 
+                borderColor: COLORS.badgeBorder,
+                backgroundColor: 'transparent'
+              }}
+            >
+              BOOKED
+            </div>
+            <button className="text-gray-500">
+              <MoreVertical size={30} />
+            </button>
           </div>
-          <button className="text-gray-500">
-            <MoreVertical size={22} />
-          </button>
+        </div>
+
+        <div className="space-y-0.5 mb-4">
+          <p className="text-[15px] font-bold text-black-900">
+            Cubicle: MUM02 01 {slotCode} A {booking.seatNumber}
+          </p>
+          <p className="text-[13px] text-black-500 font-normal">
+            Mumbai, ILMUMBAISTP, SDB01, {booking.slot},
+          </p>
+          <p className="text-[13px] text-black-500 font-normal">
+            {booking.timeRange} Floor, A Wing
+          </p>
         </div>
       </div>
-
-      <div className="space-y-0.5 mb-6">
-        <p className="text-[15px] font-bold text-gray-900">
-          Cubicle: MUM02 01 04 A {booking.seatNumber}
-        </p>
-        <p className="text-[13px] text-black-500 font-normal">
-          Mumbai, ILMUMBAISTP, SDB01, {booking.slot},
-        </p>
-        <p className="text-[13px] text-black-500 font-normal">
-          {booking.timeRange} Floor, A Wing
-        </p>
-      </div>
-    </div>
-  );
+    );
+  };
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden bg-[#f5f5f5] relative font-sans">
+    <div className="flex flex-col h-screen overflow-hidden bg-[#f5f5f5] relative font-roboto">
       <header className="relative flex items-center justify-between px-4 h-14 text-white shadow-md z-10 bg-brand-color">
         <button onClick={onBack} className="p-1 active:opacity-60 transition-opacity z-20">
           <ArrowLeft size={24} strokeWidth={2.5} />
@@ -110,7 +115,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
           </p>
         </div>
 
-        {/* Swipe Container with Enhanced Transition */}
+        {/* Swipe Container with Enhanced Transition and reduced box dimensions */}
         <div className="w-full bg-white rounded-md border border-gray-200 shadow-sm overflow-hidden relative">
           <div 
             className="flex transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]"
