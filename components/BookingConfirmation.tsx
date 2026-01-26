@@ -45,19 +45,19 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
   };
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden bg-['rgb(110,30,150)'] relative font-Robeto">
-      {/* App Bar / Header */}
+    <div className="flex flex-col h-screen overflow-hidden bg-[#f5f5f5] relative font-sans">
+      {/* App Bar / Header - Matches snippet precisely */}
       <header className="relative flex items-center justify-between px-4 h-14 text-white shadow-md z-10 bg-custom-purple">
         <button onClick={onBack} className="p-1 active:opacity-60 transition-opacity z-20">
-          <ArrowLeft size={22} strokeWidth={2.5} />
+          <ArrowLeft size={24} strokeWidth={2.5} />
         </button>
         
-        <h1 className="absolute inset-0 flex items-center justify-center text-[21px] font-bold tracking-normal pointer-events-none uppercase">
+        <h1 className="absolute inset-0 flex items-center justify-center text-[18px] font-bold tracking-tight pointer-events-none uppercase">
           BOOK SEAT
         </h1>
 
         <button className="p-1 z-20">
-          <MoreVertical size={40} />
+          <MoreVertical size={24} />
         </button>
       </header>
 
@@ -66,7 +66,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
         
         {/* Banner Alert */}
         <div className="w-full rounded-lg p-4 mb-4 shadow-sm" style={{ backgroundColor: COLORS.bannerBg }}>
-          <p className="text-gray-800 text-[14px] leading-snug font-normal">
+          <p className="text-gray-800 text-[14px] font-normal leading-snug">
             <span className="font-bold">Time Slot based seat booking is now live!</span>
             <br />
             <span 
@@ -94,9 +94,9 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
             </span>
             
             <div className="flex items-center gap-3">
-              {/* BOOKED Badge - Fixed centering */}
+              {/* BOOKED Badge - Center text precisely within its border container */}
               <div 
-                className="flex items-center justify-center px-5 h-[30px] rounded-full text-[14px] font-bold border tracking-wider whitespace-nowrap"
+                className="flex items-center justify-center px-4 h-[26px] rounded-full text-[12px] font-bold border tracking-wider whitespace-nowrap leading-none"
                 style={{ 
                   color: COLORS.badgeText, 
                   borderColor: COLORS.badgeBorder,
