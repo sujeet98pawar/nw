@@ -48,7 +48,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
     return (
       <div className="w-full shrink-0 px-4 py-3.5 select-none">
         <div className="mb-1.5">
-          <h2 className="text-[16px] font-medium text-gray-800">Recent Booking</h2>
+          <h2 className="text-[16px] font-medium text-black-800">Recent Booking</h2>
         </div>
 
         <div className="flex items-center justify-between mb-4 min-h-[32px]">
@@ -58,7 +58,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
           
           <div className="flex items-center gap-3">
             <div 
-              className="flex items-center justify-center px-5 h-[24px] rounded-full text-[11.5px] font-bold border tracking-wider whitespace-nowrap leading-none"
+              className="flex items-center justify-center px-5 h-[26px] rounded-full text-[12px] font-bold border tracking-wider whitespace-nowrap leading-none"
               style={{ 
                 color: COLORS.badgeText, 
                 borderColor: COLORS.badgeBorder,
@@ -68,7 +68,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
               BOOKED
             </div>
             <button className="text-gray-500">
-              <MoreVertical size={30} />
+              <MoreVertical size={28} />
             </button>
           </div>
         </div>
@@ -77,10 +77,10 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
           <p className="text-[15px] font-bold text-black-900">
             Cubicle: MUM02 01 {slotCode} A {booking.seatNumber}
           </p>
-          <p className="text-[13px] text-black-500 font-normal">
+          <p className="text-[13px] text-black-500 font-roboto">
             Mumbai, ILMUMBAISTP, SDB01, {booking.slot},
           </p>
-          <p className="text-[13px] text-black-500 font-normal">
+          <p className="text-[13px] text-black-500 font-roboto">
             {booking.timeRange} Floor, A Wing
           </p>
         </div>
