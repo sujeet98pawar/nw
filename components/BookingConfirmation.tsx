@@ -106,8 +106,8 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
 
       <main className="flex-1 p-4 flex flex-col items-center">
         <div className="w-full rounded-lg p-4 mb-4 shadow-sm" style={{ backgroundColor: COLORS.bannerBg }}>
-          <p className="text-gray-800 text-[14.5px] leading-snug font-medium">
-            <span className="font-extrabold">Time Slot based seat booking is now live!</span>
+          <p className="text-gray-800 text-[14px] leading-snug font-medium">
+            <span className="font-black">Time Slot based seat booking is now live!</span>
             <br />
             <span className="font-medium bold underline decoration-1" style={{ color: COLORS.linkText }}>
               Click Here
