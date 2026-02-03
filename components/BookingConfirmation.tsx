@@ -107,9 +107,9 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
       <main className="flex-1 p-4 flex flex-col items-center">
         <div className="w-full rounded-lg p-4 mb-4 shadow-sm" style={{ backgroundColor: COLORS.bannerBg }}>
           <p className="text-gray-800 text-[15px] leading-snug font-medium">
-            <span className="font-bold">Time Slot based seat booking is now live!</span>
+            <span className="font-extrabold">Time Slot based seat booking is now live!</span>
             <br />
-            <span className="font-normal underline decoration-1" style={{ color: COLORS.linkText }}>
+            <span className="font-medium bold underline decoration-1" style={{ color: COLORS.linkText }}>
               Click Here
             </span> to choose cities/DCs where time slot-based seat booking is enabled.
           </p>
