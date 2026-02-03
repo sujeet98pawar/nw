@@ -1,8 +1,8 @@
 export const COLORS = {
   primary: '#7f00cc', 
   background: '#f5f5f5',
-  badgeText: '#006600', 
-  badgeBorder: '#006600', 
+  badgeText: '#0D7A40', 
+  badgeBorder: '#0D7A40', 
   linkText: '#7f00cc', 
   bannerBg: '#dfedfe'  
 };
