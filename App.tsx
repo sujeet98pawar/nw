@@ -8,9 +8,9 @@ const App: React.FC = () => {
   const [step, setStep] = useState<AppStep>('FORM');
   const [booking, setBooking] = useState<BookingData>({
     date: new Date().toISOString().split('T')[0],
-    seatNumber: '103',
+    seatNumber: '403',
     slot: SlotType.SLOT_1,
-    timeRange: '8AM-1PM'
+    timeRange: '7AM-1PM'
   });
 
   const handleBookingSubmit = (data: BookingData) => {

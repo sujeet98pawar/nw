@@ -8,6 +8,7 @@ export const COLORS = {
 };
 
 export const SLOT_CONFIG = {
-  'SLOT-1': '8AM-1PM',
-  'SLOT-2': '2PM-7PM'
+  'SLOT-1': '7AM-1PM',
+  'SLOT-2': '1PM-7PM',
+  'SLOT-3': 'FULL-DAY'
 };

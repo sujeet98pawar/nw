@@ -42,8 +42,15 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onBa
   };
 
   const CardContent = ({ dateOffset }: { dateOffset: number }) => {
-    // Dynamically set cubicle code: Slot 1 (8AM-1PM) -> 04, Slot 2 (2PM-7PM) -> 05
-    const slotCode = booking.slot === SlotType.SLOT_1 ? '04' : '05';
+    // Slot 1 (7AM-1PM) -> 04
+    // Slot 2 (1PM-7PM) -> 05
+    // Slot 3 (FULL-DAY) -> 03
+    const slotCode =
+        booking.slot === SlotType.SLOT_1
+            ? '04'
+            : booking.slot === SlotType.SLOT_2
+                ? '05'
+                : '03';
     
     return (
       <div className="w-full shrink-0 px-4 py-3.5 select-none">

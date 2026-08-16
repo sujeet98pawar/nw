@@ -1,5 +1,6 @@
 {
   "name": "True Final app DAC",
   "description": "A streamlined mobile interface for seat reservations with a high-fidelity booking confirmation replica.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
